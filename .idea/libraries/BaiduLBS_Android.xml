@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="BaiduLBS_Android">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/platforms/android/libs/BaiduLBS_Android.jar!/" />
+      <root url="jar://$PROJECT_DIR$/platforms/android/libs/android-support-v4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
