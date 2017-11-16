@@ -418,6 +418,21 @@ app.config(function($ionicConfigProvider,$ionicNativeTransitionsProvider) {
           ]);
         }]
       }
+    }).state('selectChart', {
+      url:'/selectChart',
+      cache:false,
+      controller:'selectChartController',
+      templateUrl:function(){
+        return 'templates/selectChart.html';
+      },
+      resolve:{
+        load:['$ocLazyLoad', function ($ocLazyLoad) {
+          return $ocLazyLoad.load([
+            'echarts',
+            'js/controllers/selectChartController.js'
+          ]);
+        }]
+      }
     }).state('form', {
       url:'/form',
       cache:false,
@@ -507,6 +522,20 @@ app.config(function($ionicConfigProvider,$ionicNativeTransitionsProvider) {
         load:['$ocLazyLoad', function ($ocLazyLoad) {
           return $ocLazyLoad.load([
             'js/controllers/mapController.js'
+          ]);
+        }]
+      }
+    }).state('amap', {
+      url:'/amap',
+      cache:false,
+      controller:'amapController',
+      templateUrl:function(){
+        return 'templates/amap.html';
+      },
+      resolve:{
+        load:['$ocLazyLoad', function ($ocLazyLoad) {
+          return $ocLazyLoad.load([
+            'js/controllers/amapController.js'
           ]);
         }]
       }

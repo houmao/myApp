@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <title>高德地图</title>
+  <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+  <link rel="stylesheet" href="http://cache.amap.com/lbs/static/AMap.DrivingRender1120.css"/>
+  <style>
+    #panel {
+      z-index: 999;
+      position: absolute;
+      background-color: white;
+      max-height: 100%;
+      overflow-y: auto;
+      right: 0;
+      width: 280px;
+    }
+  </style>
+  <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.1&key=e0f62cc452414e0d0fd1aed5f92130a9&plugin=AMap.Driving"></script>
+  <script type="text/javascript" src="http://cache.amap.com/lbs/static/DrivingRender1230.js"></script>
+</head>
+<body style="margin:0;">
+<div id="container" style="position:absolute;width:100%;height:100%;"></div>
+<div id="panel"></div>
+<script>
+  var callback = location.href.substr(location.href.indexOf('callback=')+9);
+  //子页面调用父页面的mapCallback
+  window.parent[callback](AMap,Lib);
+</script>
+</body>
+</html>

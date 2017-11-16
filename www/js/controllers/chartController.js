@@ -1,35 +1,35 @@
 angular.module('app').controller('chartController',['$rootScope','$scope','utils',function($rootScope,$scope,utils){
 	(function init() {
 		$scope.vo = {};
-		function random(){
-		    return Math.round(Math.random() * 10);
-		}
-
-		function randomDataArray(length) {
-		    var d = [];
-		    var len = length||100;
-		    while (len--) {
-		        d.push(len*100+random());
-		    }
-		    return d;
-		}
-
-		var yingbei = randomDataArray(45);
-		var yibei = (function(){
-			var array = randomDataArray(45);
-        	for(var i=0;i<array.length;i++){
-        		if(i>10){
-        			array[i] = 200;
-        		}else{
-        			array[i] = 1200-i*100;
-        		}
-        	}
-        	return array;
-		})();
-		var ce = [];
-		for(var i=0;i<yingbei.length;i++){
-			ce[i] = yingbei[i]-yibei[i];
-		}
+		// function random(){
+		//     return Math.round(Math.random() * 10);
+		// }
+        //
+		// function randomDataArray(length) {
+		//     var d = [];
+		//     var len = length||100;
+		//     while (len--) {
+		//         d.push(len*100+random());
+		//     }
+		//     return d;
+		// }
+        //
+		// var yingbei = randomDataArray(45);
+		// var yibei = (function(){
+		// 	var array = randomDataArray(45);
+        	// for(var i=0;i<array.length;i++){
+        	// 	if(i>10){
+        	// 		array[i] = 200;
+        	// 	}else{
+        	// 		array[i] = 1200-i*100;
+        	// 	}
+        	// }
+        	// return array;
+		// })();
+		// var ce = [];
+		// for(var i=0;i<yingbei.length;i++){
+		// 	ce[i] = yingbei[i]-yibei[i];
+		// }
 
         var options = {
             barOptions:{
@@ -93,7 +93,7 @@ angular.module('app').controller('chartController',['$rootScope','$scope','utils
 			                    barBorderWidth: 0,
 			                    barBorderRadius:0,
 			                    label : {
-			                        show: true, 
+			                        show: true,
 			                        position: 'inside',
 			                        formatter: function (param) {
 			                            if(param.value==0){
@@ -205,13 +205,13 @@ angular.module('app').controller('chartController',['$rootScope','$scope','utils
 			        data:['2011年', '2012年']
 			    },
 			    xAxis : [
-			        {	
+			        {
 			        	axisLabel:{
 			        		formatter:function(data){
 				        		return data+'万';
 				        	}
 			        	},
-			        	splitLine:{ 
+			        	splitLine:{
 		                	show:false
 		          		},
 			            type : 'value',
@@ -221,7 +221,7 @@ angular.module('app').controller('chartController',['$rootScope','$scope','utils
 			    yAxis : [
 			        {
 			            type : 'category',
-			            splitLine:{ 
+			            splitLine:{
 		                	show:false
 		          		},
 			            data : ['巴西','印尼','美国','印度','中国','世界']
@@ -263,7 +263,7 @@ angular.module('app').controller('chartController',['$rootScope','$scope','utils
 			        {
 			            type : 'category',
 			            boundaryGap : false,
-			            splitLine:{ 
+			            splitLine:{
 		                	show:false
 		          		},
 			            data : ['周一','周二','周三','周四','周五','周六','周日']
@@ -272,7 +272,7 @@ angular.module('app').controller('chartController',['$rootScope','$scope','utils
 			    yAxis : [
 			        {
 			            type : 'value',
-			            splitLine:{ 
+			            splitLine:{
 		                	show:false
 		          		},
 			            axisLabel : {
@@ -464,7 +464,7 @@ angular.module('app').controller('chartController',['$rootScope','$scope','utils
 			            data:[],
 			            markLine : {
 			                smooth:true,
-			                symbol: ['none', 'circle'],  
+			                symbol: ['none', 'circle'],
 			                symbolSize : 1,
 			                itemStyle : {
 			                    normal: {
@@ -1045,29 +1045,29 @@ angular.module('app').controller('chartController',['$rootScope','$scope','utils
 			}
         };
 
-        var timeTicket;
-        utils.$interval.cancel(timeTicket);
-        timeTicket = utils.$interval(function (){
-        	if($scope.vo.gaugeOptions){
-        		$scope.vo.gaugeOptions = {
-	        		title : {
-						text: '业绩完成率',
-						x:'center'
-					},
-	        		tooltip : {
-	        			formatter: "{a} <br/>{b} : {c}%"
-	        		},
-	        		series : [
-	        		{
-	        			name:'业务指标',
-	        			type:'gauge',
-	        			detail : {formatter:'{value}%'},
-	        			data:[{value: (Math.random()*100).toFixed(2) - 0, name: '完成率'}]
-	        		}
-	        		]
-	        	};
-        	}
-        },1000);
+        // var timeTicket;
+        // utils.$interval.cancel(timeTicket);
+        // timeTicket = utils.$interval(function (){
+        // 	if($scope.vo.gaugeOptions){
+        // 		$scope.vo.gaugeOptions = {
+	     //    		title : {
+			// 			text: '业绩完成率',
+			// 			x:'center'
+			// 		},
+	     //    		tooltip : {
+	     //    			formatter: "{a} <br/>{b} : {c}%"
+	     //    		},
+	     //    		series : [
+	     //    		{
+	     //    			name:'业务指标',
+	     //    			type:'gauge',
+	     //    			detail : {formatter:'{value}%'},
+	     //    			data:[{value: (Math.random()*100).toFixed(2) - 0, name: '完成率'}]
+	     //    		}
+	     //    		]
+	     //    	};
+        // 	}
+        // },1000);
 
         var array = ['fyceOptions','ybfyOptions','barOptions','hbarOptions','lineOptions','pieOptions','doughnutOptions','radarOptions','areaOptions','gaugeOptions','funnelOptions','mapOptions'],i=0;
 
@@ -1084,23 +1084,23 @@ angular.module('app').controller('chartController',['$rootScope','$scope','utils
         		}else{
         			utils.$interval.cancel(optionInterval);
         		}
-			},3000);
+			},2000);
         },1000);
-        
+
         $scope.vc = {
-            
+
         };
     })();
 
-    
 
-    (function initProcess() {
-        utils.$timeout(function(){
-            utils.$ocLazyLoad.load([
-                'echarts'
-            ]).then(function(){
-                utils.$compile($('chart'))($scope);
-            });
-        },100);
-    })();
+
+    // (function initProcess() {
+    //     utils.$timeout(function(){
+    //         utils.$ocLazyLoad.load([
+    //             'echarts'
+    //         ]).then(function(){
+    //             utils.$compile($('chart'))($scope);
+    //         });
+    //     },100);
+    // })();
 }]);

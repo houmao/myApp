@@ -1,0 +1,35 @@
+<ion-view view-title="图表">
+  <ion-nav-buttons side="left">
+    <button ui-sref="home" class="button button-positive icon ion-chevron-left"></button>
+  </ion-nav-buttons>
+
+  <ion-content class="has-header" overflow-scroll="false">
+    <div class="list">
+      <!--<div class="item">-->
+        <!--<button>bar</button>-->
+        <!--<button>pie</button>-->
+        <!--<button>doughnut</button>-->
+        <!--<button>hbar</button>-->
+        <!--<button>line</button>-->
+        <!--<button>radar</button>-->
+        <!--<button>area</button>-->
+        <!--<button>map</button>-->
+        <!--<button>gauge</button>-->
+        <!--<button>funnel</button>-->
+      <!--</div>-->
+      <label class="item item-input item-select">
+        <div class="input-label" ng-click="test()">
+          <i class="fa fa-bar-chart fa-fw"></i>选择图表
+        </div>
+        <select name="bar" id="" ng-model="selectedValue" ng-change="select(selectedValue)">
+          <option value="{{index}}" ng-repeat="index in lists">{{index}}</option>
+        </select>
+      </label>
+      <div class="item">
+        <chart width="100%" height="300px" options="vo.selects"></chart>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+
+

@@ -35,6 +35,7 @@ angular.module('app').directive('chart', ['$compile',function($compile) {
                 myChart.hideLoading();
 			}
 			scope.$watch('options',function(newValue){
+			  myChart.clear();
 				if(newValue){
 					myChart.setOption(newValue,true);
 					myChart.hideLoading();
